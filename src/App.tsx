@@ -2,7 +2,7 @@ import { Button, Container } from "@mui/material"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { Pagination, Autoplay } from 'swiper/modules';
-
+import styles from "./styles/pages/Home.module.scss"
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -15,32 +15,29 @@ const data = [
   {
     title: "Weather Section",
     image: "/images/weather.jpg",
-    description: ""
+    description: "Stay informed about the latest weather updates in your area and beyond. This section provides real-time weather forecasts, temperature trends, and severe weather alerts to help you plan your day effectively. Whether you're looking for sunny skies or storm warnings, we've got you covered."
   },
   {
     title: "CryptoCurrency Section",
     image: "/images/crypto.jpg",
-    description: ""
+    description: "Dive into the dynamic world of cryptocurrencies with up-to-date market trends, price changes, and insightful analysis. This section covers everything from Bitcoin to altcoins, helping you make informed investment decisions. Stay ahead of the curve with our comprehensive resources and expert tips."
   },
   {
     title: "Covid-19 Section",
-    image: "images/covid.jpg",
-    description: ""
+    image: "/images/covid.jpg",
+    description: "Access essential information on the ongoing Covid-19 pandemic, including case statistics, vaccination rates, and health guidelines. This section aims to keep you informed with the latest developments and resources to help you stay safe and healthy. Stay updated on travel restrictions and public health measures affecting your community."
   }
-  
-  
-]
+];
+
 
 function App() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
 
   return (
-    <main className="bg-black">
-      <Container maxWidth={false} className="p-2 flex items-center justify-center h-screen">
-        <ArrowBackIosIcon className="text-white" style={{ fontSize: "2rem" }} onClick={() => swiperInstance?.slidePrev()} />
+      <Container maxWidth={false} className={styles.container}>
+        <ArrowBackIosIcon className={styles.arrows} onClick={() => swiperInstance?.slidePrev()} />
         <Swiper
-          className="drop-shadow-lg"
           modules={[Pagination, Autoplay]}
           spaceBetween={50}
           slidesPerView={1}
@@ -52,17 +49,22 @@ function App() {
         >
           {
             data.map((project, idx) => (
-              <SwiperSlide key={idx} className="bg-cover h-[40rem] w-full p-2 bg-center" style={{ backgroundImage: `url(${project.image})`}}>
-                <div className="text-5xl p-5 font-bold text-slate-50 drop-shadow-md ">
-                  {project.title}
+              <SwiperSlide key={idx} className={styles.slide} style={{ backgroundImage: `url(${project.image})`}}>
+               <div className={styles.content}>
+                  <div className={styles.title}>
+                    {project.title}
+                  </div>
+                  <p className={styles.description}>{project.description}</p>
+                  <div className={styles.button}>
+                    <Button variant="contained">More Info</Button>
+                  </div>
                 </div>
               </SwiperSlide>
             ))
           }
         </Swiper>
-        <ArrowForwardIosIcon className="text-white" style={{ fontSize: "2rem" }} onClick={() => swiperInstance?.slideNext()} />
+        <ArrowForwardIosIcon className={styles.arrows} onClick={() => swiperInstance?.slideNext()} />
       </Container>
-    </main>
   )
 }
 

@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <AppBar className='bg-blue-600' position="static"> {/* Changed to blue-600 */}
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <LinearScaleIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

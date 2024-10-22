@@ -1,0 +1,57 @@
+@use "../../styles/reusable.all.scss" as *;
+
+@keyframes active {
+    0% {
+        color: transparent;
+    }
+
+    50% {
+        color: $tertiary;
+    }
+
+    100% {
+        color: transparent;
+    }
+}
+
+.main {
+    
+    .info {
+        padding: 1rem;
+        .country {
+            color: $quaternary;
+            font-size: 5rem;
+        }
+
+        .cases {
+            
+            color: $quaternary;
+            font-size: 1.5rem;
+            .activecases {
+                .active {
+                    animation: 1s active 0s ease-in-out infinite;
+                    font-size: 2rem;
+                }
+            }
+
+            .totaldeath {
+                svg {
+                    color: rgb(189, 0, 0);
+                    font-size: 2rem;
+                }
+            }
+
+            .totalcases {
+                svg {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+    }
+
+    .map {
+        @include flex(false, center, center);
+        height: calc($content-height - 15rem);
+    }
+}

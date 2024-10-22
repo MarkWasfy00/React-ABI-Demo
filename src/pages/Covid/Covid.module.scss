@@ -1,0 +1,8 @@
+@use "../../styles/reusable.all.scss" as *;
+
+
+.main {
+    @include flex(column, center, center);
+    background-color: $primary;
+    height: $content-height;
+}

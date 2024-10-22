@@ -1,8 +1,12 @@
+import MapChart from '../../components/Map/MapChart'
 import styles from './Covid.module.scss'
 
 const Covid = () => {
   return (
-    <div className={styles.main}>Covid</div>
+    <div className={styles.main}>
+       
+      <MapChart />
+    </div>
   )
 }
 

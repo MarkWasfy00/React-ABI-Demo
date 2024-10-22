@@ -1,17 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
-import Header from './components/Header/Header.tsx'
-import { ThemeProvider } from '@mui/material'
-import theme from './theme/index.ts'
 
-import "./styles/normalize.css"
+import "./styles/base.all.scss"
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}> 
-        <Header />
-        <App />
-    </ThemeProvider>,
-  </StrictMode>,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 )

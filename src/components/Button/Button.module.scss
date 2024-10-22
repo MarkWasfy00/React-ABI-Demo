@@ -1,0 +1,16 @@
+@use "../../styles/reusable.all.scss" as *;
+
+
+.button {
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 1px solid $tertiary;
+    background-color: $tertiary;
+    color: $font-light;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+}

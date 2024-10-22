@@ -1,0 +1,51 @@
+@use "../../styles/reusable.all.scss" as *;
+
+
+
+.main {
+    min-height: $content-height;
+    @include flex(column , center, center);
+    background-color: $primary;
+    
+
+    .container {
+       @include flex(false , center, center);
+       max-width: 150rem;
+       min-height: $content-height;
+       width: 100%;
+
+        .slider {
+            height: 50rem;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            .slide {
+                background-size: cover;
+                background-position: center;
+
+                .content {
+                    padding: 2rem;
+                    .title {
+                        font-size: 4rem;
+                        color: $quaternary;
+                        font-weight: 800;
+                        text-shadow: 1px 1px $secondary;
+                    }
+                    .description {
+                        font-size: 1.2rem;
+                        color: $quaternary;
+                        font-weight: 500;
+                        line-height: 2.5rem;
+                        max-width: 50%;
+
+                    }
+                }
+            }
+        }
+
+        .arrows {
+            font-size: 3rem;
+            fill: $tertiary;
+            
+        }
+   }
+}
+

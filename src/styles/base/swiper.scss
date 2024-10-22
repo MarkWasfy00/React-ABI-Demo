@@ -1,0 +1,5 @@
+@use "../reusable/variables.scss" as *;
+
+.swiper-pagination-bullet-active {
+    background-color: $tertiary !important;
+}

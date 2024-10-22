@@ -3,8 +3,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -36,7 +35,7 @@ const Home = () => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <ArrowBackIosIcon className={styles.arrows} onClick={() => swiperInstance?.slidePrev()} />
+        <MdArrowBackIos className={styles.arrows} onClick={() => swiperInstance?.slidePrev()} />
         <Swiper
           className={styles.slider}
           modules={[Pagination, Autoplay]}
@@ -64,7 +63,7 @@ const Home = () => {
             ))
           }
         </Swiper>
-        <ArrowForwardIosIcon className={styles.arrows} onClick={() => swiperInstance?.slideNext()} />
+        <MdArrowForwardIos className={styles.arrows} onClick={() => swiperInstance?.slideNext()} />
       </div>
   </main>
   )

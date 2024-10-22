@@ -1,0 +1,59 @@
+@use "../../styles/reusable.all.scss" as *;
+
+
+.main {
+    min-height: $content-height;
+    background-color: $primary;
+    
+    .loading {
+        color: $quaternary;
+        font-size: 4rem;
+    }
+
+
+    .container {
+        max-width: 150rem;
+        margin: 0 auto;
+        gap: 2rem;
+        padding-top: 2rem;
+        width: 100%;
+       
+
+        .coin {
+            @include flex(false, center);
+            gap: 2rem;
+            padding: 2rem;
+            margin-top: 1rem;
+            background-color: $secondary;
+            .image {
+                width: 6rem;
+                img {
+                    width: 100%;
+                }
+            }
+
+            .info {
+                color: $quaternary;
+                .symbol {
+                    text-transform: uppercase;
+                    font-size: 3rem;
+                    font-weight: 700;
+                }
+
+                .price {
+                    font-size: 2rem;
+                    svg {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .rank {
+                    font-size: 2rem;
+                    svg {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -44,9 +44,6 @@ interface Weather {
   daily: Forecast[]
 }
 
-// b03a640e5ef6980o4da35b006t5f2942
-// 3a8a7709fct4f3c29afe0o4baad53aa5
-
 const Weather = () => {
   const [publicKey] = useState("3a8a7709fct4f3c29afe0o4baad53aa5")
   const [country, setCountry] = useState("Alexandria")
@@ -70,7 +67,6 @@ const Weather = () => {
     const currentWeather = await getWeather();
     const forecast = await getForecast();
     
-    // Combine current weather data with the daily forecast
     const weatherData = {
       city: currentWeather.city,
       country: currentWeather.country,
@@ -94,7 +90,7 @@ const Weather = () => {
         degree: currentWeather.wind.degree,
         speed: currentWeather.wind.speed,
       },
-      daily: forecast.daily // Only the daily key is taken from the forecast
+      daily: forecast.daily
     };
   
     return weatherData;
@@ -112,7 +108,6 @@ const Weather = () => {
     setWeather([])
     setCurrentCountries(new Set())
   };
-
 
   const addNewFetchedWeather = async () => {
     const data: Weather = await getWeatherWithDailyForecast();
@@ -145,7 +140,7 @@ const Weather = () => {
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCountry(event.target.value); // Update state with the input's current value
+    setCountry(event.target.value);
   };
 
   useEffect(() => {

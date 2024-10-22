@@ -44,6 +44,7 @@ const Crypto = () => {
   const fetchCurrencies = async () => {
     const data = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`)
     const response = await data.json()
+    // Get only the first 10 cryptocurrencies
     const firstTenCryptos = response.slice(0, 10);
 
     setCrypto(firstTenCryptos);

@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from './Crypto.module.scss'
 
 const Crypto = () => {
   return (
-    <div>Crypto</div>
+    <div className={styles.main}>Crypto</div>
   )
 }
 

@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from './Covid.module.scss'
 
 const Covid = () => {
   return (
-    <div>Covid</div>
+    <div className={styles.main}>Covid</div>
   )
 }
 
